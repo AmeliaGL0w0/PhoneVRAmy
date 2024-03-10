@@ -175,6 +175,7 @@ extern "C" JNIEXPORT void JNICALL Java_viritualisres_phonevr_ALVRActivity_initia
     uint32_t viewWidth = std::max(screenWidth, screenHeight) / 2;
     uint32_t viewHeight = std::min(screenWidth, screenHeight);
 
+    Display display = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
     float refreshRatesBuffer[1] = display.getRefreshRate();
 
     alvr_initialize((void *) CTX.javaVm,
